@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto</title>
+    <style>
+        body
+        {
+            font-family: Arial, sans-serif;
+            background-color: #712727;
+            color: #3e2b2b;
+            margin: 10px;
+            padding: 20px;
+        }
+        header
+        {
+            background-color: #3dc346;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 50px 50px 50px rgba(0, 0, 0, 0.5);
+        }
+        nav
+        {
+            background-color: #172eb1;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 10px;
+            border-radius: 20px;
+        }
+nav a
+        {
+            color: #09c8ee;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover
+        {
+            text-decoration: underline;
+            color: #f90798;
+            transform: scale(1.55);
+            transition: color 0.9s ease, transform 0.3s ease;
+        }
+        section
+        {
+            margin: 10px 0;
+            max width: 300px;
+            padding: 10px;
+            background-color: lightgray;
+            border-radius: 40px;
+            box-shadow: 10px 9px 15px rgba(0, 0, 0, 0.8);
+            justify-items: center;
+            text-align: center;
+        }
+        img
+        {
+            max-width: 30%;
+            height: auto;
+            border-radius: 8px;
+            
+        }
+        footer
+        {
+            background-color: #000000;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            color:chartreuse
+        }
+        .button
+        {
+            background-color: #f90798;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease
+            display: inline-block;
+            text-decoration: none; 
+        }
+        .button:hover
+        {
+            background-color: #2a8f2a;
+            color: #000000;
+            transform: scale(1.15);
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .img1
+        {
+            border-radius: 20px;
+            box-shadow: 10px 9px 15px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease;
+        }
+        .cube-container {
+    perspective: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+.cube {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    transform-style: preserve-3d;
+    animation: spin 8s infinite linear;
+}
+.face {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(34, 34, 34, 0.7); /* gris oscuro con transparencia */
+    border: 2px solid #00eaff; /* celeste brillante */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dots {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+}
+.dot {
+    width: 14px;
+    height: 14px;
+    background: #00eaff; /* celeste brillante */
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+    opacity: 0;
+    box-shadow: 0 0 8px #00eaff, 0 0 2px #fff;
+}
+/* Caras del dado con puntos centrados y números del 1 al 6 */
+.dots-1 .dot:nth-child(5) { opacity: 1; }
+.dots-2 .dot:nth-child(1), .dots-2 .dot:nth-child(9) { opacity: 1; }
+.dots-3 .dot:nth-child(1), .dots-3 .dot:nth-child(5), .dots-3 .dot:nth-child(9) { opacity: 1; }
+.dots-4 .dot:nth-child(1), .dots-4 .dot:nth-child(3), .dots-4 .dot:nth-child(7), .dots-4 .dot:nth-child(9) { opacity: 1; }
+.dots-5 .dot:nth-child(1), .dots-5 .dot:nth-child(3), .dots-5 .dot:nth-child(5), .dots-5 .dot:nth-child(7), .dots-5 .dot:nth-child(9) { opacity: 1; }
+.dots-6 .dot:nth-child(1), .dots-6 .dot:nth-child(3), .dots-6 .dot:nth-child(4), .dots-6 .dot:nth-child(6), .dots-6 .dot:nth-child(7), .dots-6 .dot:nth-child(9) { opacity: 1; }
+.front  { transform: rotateY(0deg) translateZ(60px); }
+.back   { transform: rotateY(180deg) translateZ(60px); }
+.right  { transform: rotateY(90deg) translateZ(60px); }
+.left   { transform: rotateY(-90deg) translateZ(60px); }
+.top    { transform: rotateX(90deg) translateZ(60px); }
+.bottom { transform: rotateX(-90deg) translateZ(60px); }
+@keyframes spin {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+}
+    </style>
+   
+    
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Mi Proyecto</h1>
+    </header>
+    <nav>
+        <a href="#home">Inicio</a>
+        <a href="#about">Acerca de</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+    <section id="home">
+        <h2>Inicio</h2>
+        <p>Este es el inicio de mi proyecto. Aquí puedes encontrar información relevante.</p>
+        <img class="img1" src="https://img.freepik.com/vector-gratis/ilustracion-cachorro-feliz-etiqueta-corazon_1308-162909.jpg?semt=ais_hybrid&w=740&q=80" alt="Imagen de ejemplo">
+            
+    
+    </section>
+    <section id="about">
+        <h2>Acerca de</h2>
+        <p>Información sobre el proyecto y su propósito.</p>
+    </section>
+    <section id="contact">
+        <h2>Contacto</h2>
+        <p>Puedes contactarme a través del siguiente botón:</p>
+        <a href="https:google.com.ar" class="button">Enviar Mensaje</a>
+    </section>
+    <section id="logos">
+        <h2>Redes Sociales</h2>
+        <a href="https:google.com.ar" class="redes" target=blank>
+            <img src="https://pbs.twimg.com/profile_images/1311763847775125516/mvBRhlDs_400x400.jpg" alt="Logo de Google" width="50" height="50">
+        </a>
+    </section>
+    <section id="video">
+        <h2>Video Destacado</h2>
+        <div style="display: flex; justify-content: center;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/PUBIJeHl_2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </section>
+    <section id="cubo">
+        <h2>Dado Giratorio</h2>
+        <div class="cube-container">
+            <div class="cube">
+                <div class="face front"><div class="dots dots-1"></div></div>
+                <div class="face back"><div class="dots dots-2"></div></div>
+                <div class="face right"><div class="dots dots-3"></div></div>
+                <div class="face left"><div class="dots dots-4"></div></div>
+                <div class="face top"><div class="dots dots-5"></div></div>
+                <div class="face bottom"><div class="dots dots-6"></div></div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        &copy; 2025 Mi Proyecto. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
+
+<style>
+.cube-container {
+    perspective: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+.cube {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    transform-style: preserve-3d;
+    animation: spin 3s infinite linear;
+}
+.face {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(34, 34, 34, 0.7); /* gris oscuro con transparencia */
+    border: 2px solid #00eaff; /* celeste brillante */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dots {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+}
+.dot {
+    width: 14px;
+    height: 14px;
+    background: #00eaff; /* celeste brillante */
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+    opacity: 0;
+    box-shadow: 0 0 8px #00eaff, 0 0 2px #fff;
+}
+/* Caras del dado con puntos centrados y números del 1 al 6 */
+.dots-1 .dot:nth-child(5) { opacity: 1; }
+.dots-2 .dot:nth-child(1), .dots-2 .dot:nth-child(9) { opacity: 1; }
+.dots-3 .dot:nth-child(1), .dots-3 .dot:nth-child(5), .dots-3 .dot:nth-child(9) { opacity: 1; }
+.dots-4 .dot:nth-child(1), .dots-4 .dot:nth-child(3), .dots-4 .dot:nth-child(7), .dots-4 .dot:nth-child(9) { opacity: 1; }
+.dots-5 .dot:nth-child(1), .dots-5 .dot:nth-child(3), .dots-5 .dot:nth-child(5), .dots-5 .dot:nth-child(7), .dots-5 .dot:nth-child(9) { opacity: 1; }
+.dots-6 .dot:nth-child(1), .dots-6 .dot:nth-child(3), .dots-6 .dot:nth-child(4), .dots-6 .dot:nth-child(6), .dots-6 .dot:nth-child(7), .dots-6 .dot:nth-child(9) { opacity: 1; }
+.front  { transform: rotateY(0deg) translateZ(60px); }
+.back   { transform: rotateY(180deg) translateZ(60px); }
+.right  { transform: rotateY(90deg) translateZ(60px); }
+.left   { transform: rotateY(-90deg) translateZ(60px); }
+.top    { transform: rotateX(90deg) translateZ(60px); }
+.bottom { transform: rotateX(-90deg) translateZ(60px); }
+@keyframes spin {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+}
+</style>
+<script>
+document.querySelectorAll('.dots').forEach(function(dots){
+    for(let i=1;i<=9;i++){
+        const dot=document.createElement('div');
+        dot.className='dot';
+        dots.appendChild(dot);
+    }
+});
+</script>
